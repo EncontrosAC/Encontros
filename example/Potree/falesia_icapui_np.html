@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Potree Viewer</title>
 
 	<link rel="stylesheet" type="text/css" href="./libs/potree/potree.css">
@@ -30,7 +30,7 @@
 
 	
 	<div class="potree_container" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; ">
-		<div id="potree_render_area" style="background-image: url('../build/potree/resources/images/background.jpg');"></div>
+		<div id="potree_render_area" style="background-image: url('./build/potree/resources/images/background.jpg');"></div>
 		<div id="potree_sidebar_container"> </div>
 	</div>
 	
@@ -40,7 +40,7 @@
 		
 		viewer.setEDLEnabled(false);
 		viewer.setFOV(60);
-		viewer.setPointBudget(1_000_000);
+		viewer.setPointBudget(2_000_000);
 		<!-- INCLUDE SETTINGS HERE -->
 		viewer.loadSettingsFromURL();
 		
@@ -55,7 +55,7 @@
 		});
 		
 		
-		let url = "./pointclouds/falesia_icapui_np/metadata.json";
+		let url = "https://encontrosac.github.io/Encontros/example/Potree/pointclouds/falesia_icapui_np/metadata.json";
 		Potree.loadPointCloud(url).then(e => {
 			let pointcloud = e.pointcloud;
 			let material = pointcloud.material;

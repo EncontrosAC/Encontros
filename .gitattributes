@@ -1,0 +1,1 @@
+Potree/pointclouds/falesia_icapui_np/octree.bin filter=lfs diff=lfs merge=lfs -text

@@ -3,4 +3,6 @@ C:/Users/jorda/Encontros/Encontros/example/Potree/pointclouds/metadata.json filt
 C:/Users/jorda/Encontros/Encontros/example/Potree/pointclouds/octree.bin filter=lfs diff=lfs merge=lfs -text
 C:/Users/jorda/Encontros/Encontros/example/Potree/pointclouds/log.txt filter=lfs diff=lfs merge=lfs -text
 C:/Users/jorda/Encontros/Encontros/example/Potree/pointclouds/hierarchy filter=lfs diff=lfs merge=lfs -text
-
+.bin filter=lfs diff=lfs merge=lfs -text
+[200~example/ filter=lfs diff=lfs merge=lfs -text
+example/Potree/pointcloud/octree.bin filter=lfs diff=lfs merge=lfs -text

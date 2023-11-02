@@ -55,7 +55,7 @@
 		});
 		
 		
-		let url = "./pointclouds/falesia_icapui_np/metadata.json";
+		let url = "./pointclouds/metadata.json";
 		Potree.loadPointCloud(url).then(e => {
 			let pointcloud = e.pointcloud;
 			let material = pointcloud.material;
@@ -68,7 +68,7 @@
 			viewer.fitToScreen();
 		});
 
-		//  Potree.loadPointCloud("./pointclouds/falesia_icapui_np/metadata.json", "falesia_icapui_np", e => {
+		//  Potree.loadPointCloud("./pointclouds/metadata.json", "falesia_icapui_np", e => {
 		// 	let scene = viewer.scene;
 		// 	let pointcloud = e.pointcloud;
 			

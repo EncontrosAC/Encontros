@@ -16,6 +16,39 @@
 </head>
 
 <body>
+
+	<style>
+		#lg_geoce {
+			position: absolute;
+			right: 10px;
+			top: 10px;
+			z-index: 100;
+		}
+		#lg_ufc {
+			position: absolute;
+			right: 35px;
+			top: 80px;
+			z-index: 50;
+		}
+		#lg_EU {
+			position: absolute;
+			right: 10px;
+			top: 195px;
+			z-index: 100;
+		}
+		
+		#potree_loading {
+			position: absolute;
+			left: calc(50% - 200px);
+			top: calc(50% - 50px);
+			width: 400px;
+			text-align: center;
+			color: #eee;
+			font-weight: 400;
+			font-size: 20px;
+		}
+		</style>
+
 	<script src="./libs/jquery/jquery-3.1.1.min.js"></script>
 	<script src="./libs/spectrum/spectrum.js"></script>
 	<script src="./libs/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
@@ -37,16 +70,31 @@
 		<div id="potree_sidebar_container"> </div>
 	</div>
 	
+	<div id="potree_container">
+		<div id="lg_ufc">
+			<a rel="https://www.ufc.br/" target="_blank" title="Portal_UFC"><img src="./example/Logo/lg_ufc.png" width="60" height="80" alt="UFC" /></a>
+		</div>
+		
+	<div id="potree_container">
+        <div id="lg_geoce">
+            <a rel="https://geoce.ufc.br/pt/" target="_blank" title="GEOCE"><img src="./example/Logo/lg_geoce.jpg" width="100" height="40" alt="GEOCE" /></a>
+        </div>
+
+	<div id="potree_container">
+			<div id="lg_EU">
+				<a rel="http://sysprppg.ufc.br/eu/2023/" target="_blank" title="EU_2023"><img src="./example/Logo/lg_EU.png" width="100" height="40" alt="ENCONTROS" /></a>
+			</div>
+
 	<script>
 	
-		window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
+			window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
 		
 		viewer.setEDLEnabled(true);
 		viewer.setFOV(60);
 		viewer.setPointBudget(1*1000*1000);
 		viewer.loadSettingsFromURL();
 		
-		viewer.setDescription("");
+		viewer.setDescription("Modelo digital em formato de nuvens de pontos da Falésia de Icapuí, apresentado nos Encontros Universitario do ano de 2023. Autor Jordan Elias e co-Autores Dra. Dra. Cynthia Romariz Duarte e MSc. Cláudio Ângelo da Silva Neto");
 		
 		viewer.loadGUI(() => {
 			viewer.setLanguage('en');

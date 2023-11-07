@@ -87,17 +87,17 @@
 
 	<script>
 	
-			window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
+		window.viewer = new Potree.Viewer(document.getElementById("potree_render_area"));
 		
 		viewer.setEDLEnabled(true);
 		viewer.setFOV(60);
-		viewer.setPointBudget(1*1000*1000);
+		viewer.setPointBudget(1*2000*2000);
 		viewer.loadSettingsFromURL();
 		
 		viewer.setDescription("Modelo digital em formato de nuvens de pontos da Falésia de Icapuí, apresentado nos Encontros Universitario do ano de 2023. Autor Jordan Elias e co-Autores Dra. Cynthia Romariz Duarte e MSc. Cláudio Ângelo da Silva Neto");
 		
 		viewer.loadGUI(() => {
-			viewer.setLanguage('en');
+			viewer.setLanguage('pt-br');
 			$("#menu_appearance").next().show();
 			//viewer.toggleSidebar();
 		});

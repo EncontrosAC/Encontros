@@ -1241,10 +1241,9 @@ export class Sidebar{
 			["JP", "jp"],
 			["ES", "es"],
 			["SE", "se"],
-			["ZH", "zh"],
 			["IT", "it"],
 			["CA", "ca"]
-			["BR", "br"]
+			["PT", "br"]
 		];
 
 		let elLanguages = $('#potree_languages');

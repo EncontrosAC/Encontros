@@ -8,82 +8,84 @@
 	<title>Potree Viewer</title>
 
 	<link rel="stylesheet" type="text/css" href="../build/potree/potree.css">
-	<link rel="stylesheet" type="text/css" href="./libs/jquery-ui/jquery-ui.min.css">
-	<link rel="stylesheet" type="text/css" href="./libs/perfect-scrollbar/css/perfect-scrollbar.css">
-	<link rel="stylesheet" type="text/css" href="./libs/openlayers3/ol.css">
-	<link rel="stylesheet" type="text/css" href="./libs/spectrum/spectrum.css">
-	<link rel="stylesheet" type="text/css" href="./libs/jstree/themes/mixed/style.css">
+	<link rel="stylesheet" type="text/css" href="../libs/jquery-ui/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="../libs/perfect-scrollbar/css/perfect-scrollbar.css">
+	<link rel="stylesheet" type="text/css" href="../libs/openlayers3/ol.css">
+	<link rel="stylesheet" type="text/css" href="../libs/spectrum/spectrum.css">
+	<link rel="stylesheet" type="text/css" href="../libs/jstree/themes/mixed/style.css">
 </head>
 
 <body>
 
 	<style>
-		#lg_geoce {
-			position: absolute;
-			right: 10px;
-			top: 10px;
-			z-index: 100;
-		}
 		#lg_ufc {
 			position: absolute;
 			right: 20px;
-			top: 50px;
-			z-index: 50;
-		}
-		#lg_EU {
-			position: absolute;
-			right: 10px;
-			top: 110px;
+			top: 600px;
 			z-index: 100;
 		}
 		
-		#potree_loading {
+		#lg_geoce {
 			position: absolute;
-			left: calc(50% - 200px);
-			top: calc(50% - 50px);
-			width: 400px;
+			right: 10px;
+			top: 663px;
+			z-index: 100;
+		}
+
+		#lg_EU {
+			position: absolute;
+			right: 10px;
+			top: 710px;
+			z-index: 100;
+		}
+		
+		/* #potree_loading {
+			position: absolute;
+			left: calc(50% - 50px);
+			top: calc(50% - 25px);
+			width: 100px;
 			text-align: center;
 			color: #eee;
-			font-weight: 400;
-			font-size: 20px;
-		}
+			font-weight: 20px;
+			font-size: 50px;
+		} */
 		</style>
 
-	<script src="./libs/jquery/jquery-3.1.1.min.js"></script>
-	<script src="./libs/spectrum/spectrum.js"></script>
-	<script src="./libs/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
-	<script src="./libs/jquery-ui/jquery-ui.min.js"></script>
-	<script src="./libs/three.js/build/three.min.js"></script>
-	<script src="./libs/other/BinaryHeap.js"></script>
-	<script src="./libs/tween/tween.min.js"></script>
-	<script src="./libs/d3/d3.js"></script>
-	<script src="./libs/proj4/proj4.js"></script>
-	<script src="./libs/openlayers3/ol.js"></script>
-	<script src="./libs/i18next/i18next.js"></script>
-	<script src="./libs/jstree/jstree.js"></script>
+	<script src="../libs/jquery/jquery-3.1.1.min.js"></script>
+	<script src="../libs/spectrum/spectrum.js"></script>
+	<script src="../libs/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+	<script src="../libs/jquery-ui/jquery-ui.min.js"></script>
+	<script src="../libs/three.js/build/three.min.js"></script>
+	<script src="../libs/other/BinaryHeap.js"></script>
+	<script src="../libs/tween/tween.min.js"></script>
+	<script src="../libs/d3/d3.js"></script>
+	<script src="../libs/proj4/proj4.js"></script>
+	<script src="../libs/openlayers3/ol.js"></script>
+	<script src="../libs/i18next/i18next.js"></script>
+	<script src="../libs/jstree/jstree.js"></script>
 	<script src="../build/potree/potree.js"></script>
-	<script src="./libs/plasio/js/laslaz.js"></script>
+	<script src="../libs/plasio/js/laslaz.js"></script>
 
 	
 	<div class="potree_container" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; ">
 		<div id="potree_render_area"></div>
 		<div id="potree_sidebar_container"> </div>
 	</div>
-	
+
 	<div id="potree_container">
 		<div id="lg_ufc">
-			<a rel="https://www.ufc.br/" target="_blank" title="Portal_UFC"><img src="./Logo/lg_ufc.png" width="30" height="40" alt="UFC" /></a>
+			<a rel="https://www.ufc.br/" target="_blank" title="Portal_UFC"><img src="./Logo/lg_ufc.png" width="40" height="50" alt="UFC" /></a>
 		</div>
 		
 	<div id="potree_container">
         <div id="lg_geoce">
-            <a rel="https://geoce.ufc.br/pt/" target="_blank" title="GEOCE"><img src="./Logo/lg_geoce.jpg" width="50" height="20" alt="GEOCE" /></a>
+            <a rel="https://geoce.ufc.br/pt/" target="_blank" title="GEOCE"><img src="./Logo/lg_geoce.jpg" width="60" height="30" alt="GEOCE" /></a>
         </div>
 
 	<div id="potree_container">
-			<div id="lg_EU">
-				<a rel="http://sysprppg.ufc.br/eu/2023/" target="_blank" title="EU_2023"><img src="./Logo/lg_EU.png" width="45" height="20" alt="ENCONTROS" /></a>
-			</div>
+		<div id="lg_EU">
+			<a rel="http://sysprppg.ufc.br/eu/2023/" target="_blank" title="EU_2023"><img src="./Logo/lg_EU.png" width="60" height="30" alt="ENCONTROS" /></a>
+		</div>
 
 	<script>
 	
@@ -92,14 +94,22 @@
 		viewer.setEDLEnabled(true);
 		viewer.setFOV(60);
 		viewer.setPointBudget(1*2000*2000);
+		document.title = "Falésia de Icapuí";
+		viewer.setEDLEnabled(false);
+		viewer.setBackground("gradient"); // ["skybox", "gradient", "black", "white"];
 		viewer.loadSettingsFromURL();
-		
 		viewer.setDescription("Modelo digital de nuvem de pontos da Falésia de Icapuí, apresentado nos EU do ano de 2023. Autor Jordan Elias e co-Autores Dra. Cynthia Romariz e MSc. Cláudio Ângelo");
 		
 		viewer.loadGUI(() => {
 			viewer.setLanguage('pt-BR');
 			$("#menu_appearance").next().show();
+			$("#menu_appearance").next().hide();
+			$("#menu_tools").next().hide();
+			$("#menu_classification").hide();
+			$("#menu_scene").next().show();
 			//viewer.toggleSidebar();
+		viewer.scene.view.position.set(667499.508, 9488.044, 138.733);
+		viewer.scene.view.lookAt(666980.872, 9487908.395, -37.196);
 		});
 		
 		// Falésia
@@ -109,7 +119,7 @@
 			let material = e.pointcloud.material;
 			material.size = 1;
 			material.pointSizeType = Potree.PointSizeType.ADAPTIVE;
-			
+			material.shape = Potree.PointShape.SQUARE;
 			viewer.fitToScreen();
 		});
 		
